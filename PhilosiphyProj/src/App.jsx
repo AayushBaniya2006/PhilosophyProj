@@ -1,5 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./App.css";
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,12 +13,15 @@ function App() {
     set;
   };
 
-  return (
 
-    
+
+
+
+
+  return (
     <div>
-      {/*This is Mobile*/}
-      
+      {/*This is Mobile and Tablet*/}
+
       <div>
         <ul className="Dropdown">
           <li>
@@ -26,126 +33,158 @@ function App() {
           </li>
         </ul>
         {isOpen && (
-          
           <div className="DropdownMenu">
-                    <hr></hr>
+            <hr></hr>
 
-            <a className="DropdownMenuOptions" href="#">
-              Option 1
+            <a className="DropdownMenuOptions" href="Mainpage.jsx">
+              Explore Wisdom
             </a>
-            <a className="DropdownMenuOptions" href="#">
-              Option 2
+            <hr></hr>
+
+            <a className="DropdownMenuOptions" href="Forum.jsx">
+              Discussion Board
             </a>
-            <a className="DropdownMenuOptions" href="#">
-              Option 3
+            <hr></hr>
+
+            <a className="DropdownMenuOptions" href="Upgrade.jsx">
+              Enlightenment Path
+            </a>
+            <hr></hr>
+
+            <a className="DropdownMenuOptions" href="Login.jsx">
+              Login
             </a>
           </div>
         )}
       </div>
 
-      
-
-          {/*This is Website and Tablet*/}
+      {/*This is Website*/}
       <ul className="Navbar">
         <li className="MenuOptions">
-          <a>PhilosophyConnect</a>
+          <a href="App.jsx">PhilosophyConnect</a>
         </li>
 
         <li className="MenuOptions">
-          <a>Explore Wisdom</a>
+          <a href="Mainpage.jsx">Explore Wisdom</a>
         </li>
 
         <li className="MenuOptions">
-          <a>Discussion Board</a>
+          <a href="Forum.jsx">Discussion Board</a>
         </li>
 
         <li className="MenuOptions">
-          <a>Enlightenment Path</a>
+          <a href="Upgrade.jsx">Enlightenment Path</a>
         </li>
 
         <li className="MenuOptions">
-          <a>Login</a>
+          <a href="Login.jsx">Login</a>
         </li>
       </ul>
       <hr></hr>
 
-
-    {/*This is Website and Tablet*/}
-    <section id="Section1">
-      <div id="Textbox1Web">
-        <h1>Philosophy Connect: Where Ideas Meet Minds </h1>
-        <h4>Welcome to Philosophy Connect – Explore, Engage, Enlighten!</h4>
-        <p>Delve into the depths of thought, connect with kindred spirits, and expand your understanding of the universe at Philosophy Connect. Whether you're a seasoned philosopher or just beginning to ponder life's mysteries, our platform is your gateway to a vibrant community of thinkers and seekers.</p>
-        <button className="Button1"> How does it work? </button>
-        <button className="Button1"> Get Started</button>
-      </div>
-
-
-      <img src="Philosopher1.jpg"></img>
-    </section>
-
-
-    <h1 id="randomtext">Why PhilosophyConnect?</h1>
-
-    <section id="Section2">
-    
-      <div >
-        <h4>Explore Philosophy Easily:</h4>
-          <p>Embark on your philosophical journey with confidence through our curated selection of beginner-friendly resources. Dive into articles, videos, and podcasts designed to make complex concepts understandable and engaging.</p>
-      </div>
-      <div >
-        <h4>Discover Diverse Philosophical Ideas:</h4>
-        <p>Explore a diverse array of philosophical perspectives from ancient wisdom to modern theories. Dive into Stoicism, Utilitarianism, Absurdism, Machiavellianism, and more. Expand your philosophical horizons and find the ideas that resonate with you.</p>
-      </div>
-      <div >
-        <h4>Connect and Debate:</h4>
-        <p>Join our vibrant community of thinkers and engage in spirited discussions and debates. Share your insights, challenge perspectives, and explore diverse viewpoints in a welcoming and intellectually stimulating environment.</p>
-      </div>
-
-
-      
-    </section>
-
-
-     {/*This is Mobile*/}
-     <section id="Section1Mobile">
-      <div>
-        <h1>Philosophy Connect: Where Ideas Meet Minds </h1>
-        <h4>Welcome to Philosophy Connect – Explore, Engage, Enlighten!</h4>
-        <p>Delve into the depths of thought, connect with kindred spirits, and expand your understanding of the universe at Philosophy Connect. Whether you're a seasoned philosopher or just beginning to ponder life's mysteries, our platform is your gateway to a vibrant community of thinkers and seekers.</p>
-        <div id="MobileBox">
-          <button className="Button1Mobile"> How does it work? </button>
-          <button className="Button1Mobile"> Get Started</button>
+      {/*This is Website*/}
+      <section id="Section1">
+        <div id="Textbox1Web">
+          <h1>Philosophy Connect: Where Ideas Meet Minds </h1>
+          <h4>Welcome to Philosophy Connect – Explore, Engage, Enlighten!</h4>
+          <p>
+            Delve into the depths of thought, connect with kindred spirits, and
+            expand your understanding of the universe at Philosophy Connect.
+            Whether you're a seasoned philosopher or just beginning to ponder
+            life's mysteries, our platform is your gateway to a vibrant
+            community of thinkers and seekers.
+          </p>
+          <button className="Button1"> How does it work? </button>
+          <button className="Button1"> Get Started</button>
         </div>
-      </div>
 
+        <img src="Philosopher1.jpg"></img>
+      </section>
 
-      <img src="Philosopher1.jpg"></img>
-    </section>
+      <h1 id="randomtext">Why PhilosophyConnect?</h1>
 
+      <section id="Section2">
+        <div>
+          <h4>Explore Philosophy Easily:</h4>
+          <p>
+            Embark on your philosophical journey with confidence through our
+            curated selection of beginner-friendly resources. Dive into
+            articles, videos, and podcasts designed to make complex concepts
+            understandable and engaging.
+          </p>
+        </div>
+        <div>
+          <h4>Discover Diverse Philosophical Ideas:</h4>
+          <p>
+            Explore a diverse array of philosophical perspectives from ancient
+            wisdom to modern theories. Dive into Stoicism, Utilitarianism,
+            Absurdism, Machiavellianism, and more. Expand your philosophical
+            horizons and find the ideas that resonate with you.
+          </p>
+        </div>
+        <div>
+          <h4>Connect and Debate:</h4>
+          <p>
+            Join our vibrant community of thinkers and engage in spirited
+            discussions and debates. Share your insights, challenge
+            perspectives, and explore diverse viewpoints in a welcoming and
+            intellectually stimulating environment.
+          </p>
+        </div>
+      </section>
 
-    <h1 id="randomtextMobile">Why PhilosophyConnect?</h1>
+      {/*This is Mobile and Tablet*/}
+      <section id="Section1Mobile">
+        <div>
+          <h1>Philosophy Connect: Where Ideas Meet Minds </h1>
+          <h4>Welcome to Philosophy Connect – Explore, Engage, Enlighten!</h4>
+          <p>
+            Delve into the depths of thought, connect with kindred spirits, and
+            expand your understanding of the universe at Philosophy Connect.
+            Whether you're a seasoned philosopher or just beginning to ponder
+            life's mysteries, our platform is your gateway to a vibrant
+            community of thinkers and seekers.
+          </p>
+          <div id="MobileBox">
+            <button className="Button1Mobile"> How does it work? </button>
+            <button className="Button1Mobile"> Get Started</button>
+          </div>
+        </div>
 
-    <section id="Section2Mobile">
-    
-      <div >
-        <h4>Explore Philosophy Easily:</h4>
-          <p>Embark on your philosophical journey with confidence through our curated selection of beginner-friendly resources. Dive into articles, videos, and podcasts designed to make complex concepts understandable and engaging.</p>
-      </div>
-      <div >
-        <h4>Discover Diverse Philosophical Ideas:</h4>
-        <p>Explore a diverse array of philosophical perspectives from ancient wisdom to modern theories. Dive into Stoicism, Utilitarianism, Absurdism, Machiavellianism, and more. Expand your philosophical horizons and find the ideas that resonate with you.</p>
-      </div>
-      <div >
-        <h4>Connect and Debate:</h4>
-        <p>Join our vibrant community of thinkers and engage in spirited discussions and debates. Share your insights, challenge perspectives, and explore diverse viewpoints in a welcoming and intellectually stimulating environment.</p>
-      </div>
+        <img src="Philosopher1.jpg"></img>
+      </section>
 
+      <h1 id="randomtextMobile">Why PhilosophyConnect?</h1>
 
-      
-    </section>
-
-
+      <section id="Section2Mobile">
+        <div>
+          <h4>Explore Philosophy Easily:</h4>
+          <p>
+            Embark on your philosophical journey with confidence through our
+            curated selection of beginner-friendly resources. Dive into
+            articles, videos, and podcasts designed to make complex concepts
+            understandable and engaging.
+          </p>
+        </div>
+        <div>
+          <h4>Discover Diverse Philosophical Ideas:</h4>
+          <p>
+            Explore a diverse array of philosophical perspectives from ancient
+            wisdom to modern theories. Dive into Stoicism, Utilitarianism,
+            Absurdism, Machiavellianism, and more. Expand your philosophical
+            horizons and find the ideas that resonate with you.
+          </p>
+        </div>
+        <div>
+          <h4>Connect and Debate:</h4>
+          <p>
+            Join our vibrant community of thinkers and engage in spirited
+            discussions and debates. Share your insights, challenge
+            perspectives, and explore diverse viewpoints in a welcoming and
+            intellectually stimulating environment.
+          </p>
+        </div>
+      </section>
     </div>
   );
 }
