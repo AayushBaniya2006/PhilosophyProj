@@ -14,6 +14,7 @@ function Upgrade() {
 
   return (
    <>
+   <h1>HELLO</h1>
    </>
   );
 }

@@ -1,5 +1,4 @@
 import React, {useState } from "react";
-import "./Login.css";
 
 function Login() {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,8 +11,9 @@ function Login() {
   return (
     <div>
       {/*This is Mobile and Tablet*/}
-
-      
+      <div>
+    <h2>MAIN</h2>
+   </div>
     </div>
   );
 }

@@ -13,8 +13,9 @@ function Mainpage() {
   };
 
   return (
-   <>
-   </>
+   <div>
+    <h2>MAIN</h2>
+   </div>
   );
 }
 
